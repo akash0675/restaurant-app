@@ -37,7 +37,7 @@ class Home extends Component {
             />
           </MuiThemeProvider>
         </div>
-        <button>get location</button>
+        <button onClick={this.getLocation}>get location</button>
         <div>
           hey there I'm home
         </div>
