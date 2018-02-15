@@ -8,6 +8,21 @@ import './Home.css';
 
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.getLocation = this.getLocation.bind(this);
+  }
+
+  getLocation() {
+    if(!navigator.geolocation) {
+      alert('browser does not support geolocation');
+    }
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position.coords.latitude);
+      console.log(position.coords.longitude);
+    })
+  }
+
   render() {
     return (
       <div>
@@ -22,6 +37,7 @@ class Home extends Component {
             />
           </MuiThemeProvider>
         </div>
+        <button>get location</button>
         <div>
           hey there I'm home
         </div>
